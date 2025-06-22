@@ -968,79 +968,162 @@ footer {
   padding: 4rem 2rem;
   background: #f4f4f4;
   font-family: 'Segoe UI', sans-serif;
+  gap: 2rem;
+}
 
-  .left-content {
-    flex: 1;
-    max-width: 35%;
-    padding-right: 2rem;
+.testimonial-section .left-content {
+  flex: 1;
+  max-width: 35%;
+  padding-right: 2rem;
+}
 
-    h4 {
-      font-size: 1rem;
-      color: #4a90e2;
-      margin-bottom: 0.5rem;
-    }
+.testimonial-section .left-content h4 {
+  font-size: 1rem;
+  color: #4a90e2;
+  margin-bottom: 0.5rem;
+}
 
-    h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
+.testimonial-section .left-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
 
-    p {
-      color: #555;
-      font-size: 1rem;
-      line-height: 1.5;
-    }
+.testimonial-section .left-content p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.testimonial-section .right-carousel {
+  flex: 2;
+  overflow: hidden;
+  position: relative;
+  cursor: grab; /* Indicate draggable */
+}
+
+.testimonial-section .right-carousel:active {
+  cursor: grabbing;
+}
+
+.testimonial-section .carousel-track {
+  display: flex;
+  gap: 1.5rem;
+  animation: scrollTestimonials 20s linear infinite;
+  /* Prevent wrapping */
+  white-space: nowrap;
+}
+
+.testimonial-section .carousel-track:hover,
+.testimonial-section .right-carousel:hover .carousel-track {
+  animation-play-state: paused; /* pause scroll on hover */
+}
+
+.testimonial-section .testimonial-card {
+  /* Make it square by setting width and height equal */
+  width: 200px;
+  height: 200px;
+
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Center content vertically */
+  text-align: center;
+
+  position: relative;
+}
+
+/* Inner elements remain mostly the same */
+.testimonial-card .graphic {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-card .testimonial-text {
+  font-size: 0.95rem;
+  color: #333;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.testimonial-card .stars {
+  color: gold;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-card .client-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #4a90e2;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+/* Animation for scrolling the carousel */
+@keyframes scrollTestimonials {
+  0% {
+    transform: translateX(0);
   }
+  100% {
+    transform: translateX(calc(-200px - 1.5rem)); /* card width + gap */
+  }
+}
 
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .testimonial-section {
+    flex-direction: column;
+  }
+  .left-content,
   .right-carousel {
-    flex: 2;
-    overflow: hidden;
-    position: relative;
-
-    .carousel-track {
-      display: flex;
-      gap: 1.5rem;
-      animation: scrollTestimonials 20s linear infinite;
-    }
-
-    .testimonial-card {
-      min-width: 150px;
-      background: white;
-      border-radius: 10px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      flex-shrink: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-
-      .graphic {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-      }
-
-      .testimonial-text {
-        font-size: 0.95rem;
-        color: #333;
-        margin-bottom: 1rem;
-      }
-
-      .stars {
-        color: gold;
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-      }
-
-      .client-photo {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid #4a90e2;
-      }
-    }
+    max-width: 100%;
+    flex: none;
+    padding-right: 0;
   }
+  .testimonial-section .carousel-track {
+    animation-duration: 30s; /* slower on smaller */
+  }
+  .testimonial-card {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonial-card {
+    width: 120px;
+    height: 120px;
+    padding: 1rem;
+  }
+  .testimonial-card .graphic {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  .testimonial-card .testimonial-text {
+    font-size: 0.85rem;
+    margin-bottom: 0.5rem;
+  }
+  .testimonial-card .stars {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .testimonial-card .client-photo {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 
   @keyframes scrollTestimonials {
     0% {
