@@ -954,74 +954,162 @@ footer {
 
 
 
+  * {
+    box-sizing: border-box;
+  }
 
+  body {
+    font-family: 'Lora', serif;
+    margin: 0;
+    background: #f4f4f4;
+    color: #333;
+  }
 
+  .testimonial-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    background: #f4f4f4;
+  }
 
+  /* Left Content (Text area) */
+  .left-content {
+    flex: 1 1 300px;
+    max-width: 35%;
+  }
 
+  .left-content h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: #4a90e2;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
 
+  .left-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
 
+  .left-content p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #555;
+  }
 
+  /* Right Carousel */
+  .right-carousel {
+    flex: 1 1 600px;
+    max-width: 60%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 0.5rem;
+  }
 
-.testimonial-card {
-  width: 200px;
-  height: 200px;
-  background: white;
-  border-radius: 10px;
-  padding: 1.5rem 1.5rem 2.5rem; /* extra bottom padding for client photo */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  position: relative;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: default;
-}
+  .carousel-track {
+    display: flex;
+    gap: 1.5rem;
+  }
 
-.testimonial-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
+  /* Testimonial cards */
+  .testimonial-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+    width: 200px;
+    min-height: 200px;
+height:auto;
+    flex-shrink: 0;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    scroll-snap-align: start;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+  }
 
-.testimonial-card .graphic {
-  font-size: 2.5rem;
-  margin-bottom: 0.8rem;
-  color: #4a90e2;
-}
+  .testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+  }
 
-.testimonial-card .testimonial-text {
+  .graphic {
+    font-size: 2.5rem;
+    color: #4a90e2;
+    font-family: 'Playfair Display', serif;
+  }
+
+  .testimonial-text {
+    flex-grow: 1;
+    margin: 0.75rem 0;
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.4;
+    font-family: 'Lora', serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+  }
+  .testimonial-text {
+  flex-grow: 1;
+  margin: 0.75rem 0;
   font-size: 1rem;
-  color: #333;
+  color: #444;
   line-height: 1.4;
-  flex-grow: 1; /* allow text to fill vertical space nicely */
-  margin-bottom: 1rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-family: 'Lora', serif;
+
+  /* Remove truncation styles */
+  /* display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical; */
+  overflow: visible; /* or auto */
+  text-overflow: unset;
 }
 
-.testimonial-card .stars {
-  color: gold;
-  font-size: 1.3rem;
-  margin-bottom: 1rem;
-}
+  .stars {
+    color: #f5b50a;
+    font-size: 1.2rem;
+  }
 
-.testimonial-card .client-photo {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #4a90e2;
-  position: absolute;
-  bottom: 1rem;
-  right: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease;
-}
+  .client-photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid #4a90e2;
+    object-fit: cover;
+    align-self: center;
+    margin-top: 0.75rem;
+  }
 
-.testimonial-card:hover .client-photo {
-  transform: scale(1.1);
-}
+  /* Responsive */
+  @media (max-width: 900px) {
+    .testimonial-section {
+      flex-direction: column;
+      padding: 2rem 1rem;
+    }
+
+    .left-content,
+    .right-carousel {
+      max-width: 100%;
+      flex: none;
+    }
+
+    .right-carousel {
+      overflow-x: auto;
+      padding-bottom: 1rem;
+    }
+  }
+
 
 /* Responsive font and sizes */
 @media (max-width: 900px) {
@@ -1416,21 +1504,21 @@ footer {
         <div class="graphic">“</div>
         <p class="testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.</p>
         <div class="stars">⭐⭐⭐⭐⭐</div>
-        <img src="https://i.pravatar.cc/60?img=1" class="client-photo" alt="Client" />
+        <img src="https://randomuser.me/api/portraits/women/45.jpg" class="client-photo" alt="Client" />
       </div>
 
       <div class="testimonial-card">
         <div class="graphic">“</div>
         <p class="testimonial-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
         <div class="stars">⭐⭐⭐⭐⭐</div>
-        <img src="https://i.pravatar.cc/60?img=2" class="client-photo" alt="Client" />
+        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client" />
       </div>
 
       <div class="testimonial-card">
         <div class="graphic">“</div>
         <p class="testimonial-text">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
         <div class="stars">⭐⭐⭐⭐⭐</div>
-        <img src="https://i.pravatar.cc/60?img=3" class="client-photo" alt="Client" />
+        <img src="https://randomuser.me/api/portraits/women/40.jpg" alt="Client" />
       </div>
 
       <!-- Duplicate for looping -->
@@ -1438,7 +1526,7 @@ footer {
         <div class="graphic">“</div>
         <p class="testimonial-text">Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit.</p>
         <div class="stars">⭐⭐⭐⭐⭐</div>
-        <img src="https://i.pravatar.cc/60?img=4" class="client-photo" alt="Client" />
+        <img src="https://randomuser.me/api/portraits/men/40.jpg" class="client-photo" alt="Client" />
       </div>
     </div>
   </div>
