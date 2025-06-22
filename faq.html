@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sheet Metal Services - FAQ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Roboto', sans-serif;
+    center fixed;
+      background-size: cover;
+      color: #333;
+      position: relative;
+      z-index: 0;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: rgba(255, 255, 255, 0.85);
+      z-index: 0;
+    }
+
+    :root {
+      --primary: #004080;
+      --light: #555555;
+      --dark-overlay: rgba(0, 0, 0, 0.6);
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: var(--dark-overlay);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      z-index: 1000;
+      color: var(--light);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    header img.logo {
+      height: 50px;
+      user-select: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--light);
+      font-weight: 700;
+      text-decoration: none;
+      font-size: 1rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      left: 0;
+      bottom: -5px;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover, nav a:focus {
+      color: var(--primary);
+    }
+
+    nav a.active {
+      color: var(--primary);
+      font-weight: 700;
+      border-bottom: 2px solid var(--primary);
+    }
+
+    nav a:hover::after, nav a:focus::after {
+      width: 100%;
+    }
+
+    /* Hero Section */
+    .hero {
+      background-image: url('https://elitepumps.net/wp-content/uploads/2024/05/5-28-Elite-Pumps.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 70vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 70px; /* header height */
+      z-index: 1;
+    }
+
+    .hero-overlay {
+      background: rgba(0, 0, 0, 0.4);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero h1 {
+      color: white;
+      font-size: 3rem;
+      font-weight: 700;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      padding: 0 1rem;
+      text-align: center;
+    }
+
+    /* FAQ Card */
+    .card {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      margin: 3rem auto 4rem auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+      padding: 3rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .card h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 3.2rem;
+      margin: 0 0 1.5rem 0;
+      text-align: center;
+      color: #0D3B66;
+    }
+
+    /* FAQ Items */
+    .faq-item {
+      font-size: 1.4rem;
+      line-height: 1.6;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 1.2rem;
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      outline-offset: 3px;
+    }
+
+    .faq-item strong {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      color: #0D3B66;
+      display: block;
+      margin-bottom: 0.6rem;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      padding-left: 1rem;
+      color: #444;
+      font-size: 1.2rem;
+    }
+
+    .faq-item.open .faq-answer {
+      max-height: 400px;
+      padding-top: 0.5rem;
+      overflow-y: auto;
+    }
+
+    /* Plus/minus icon */
+    .faq-item::after {
+      content: '+';
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 2rem;
+      color: #0D3B66;
+      transition: transform 0.3s ease;
+      user-select: none;
+    }
+
+    .faq-item.open::after {
+      content: '−';
+    }
+
+    /* Contact Button */
+    .contact-button {
+      margin: 2rem auto 0 auto;
+      padding: 16px 48px;
+      font-size: 1.3rem;
+      font-weight: 600;
+      font-family: 'Roboto', sans-serif;
+      background-color: #0D3B66;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(13, 59, 102, 0.6);
+      transition: background-color 0.3s ease;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .contact-button:hover {
+      background-color: #092c4a;
+    }
+
+    /* Footer */
+    footer {
+      background: #fdfdfd;
+      color: #333;
+      font-family: 'Lora', serif;
+      margin-top: 2rem;
+      z-index: 1;
+      position: relative;
+    }
+
+    .footer-top {
+      border-bottom: 1px solid #ccc;
+      padding: 50px 20px 30px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+
+    .footer-section {
+      flex: 1 1 220px;
+      min-width: 220px;
+    }
+
+    .footer-section h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      margin-bottom: 18px;
+      color: #0D3B66;
+      font-size: 1.4rem;
+    }
+
+    .footer-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-section ul li {
+      margin-bottom: 10px;
+      font-weight: 400;
+      font-size: 1rem;
+    }
+
+    .footer-section ul li a {
+      color: #333;
+      text-decoration: none;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+      border-bottom: 1px dashed transparent;
+      padding-bottom: 2px;
+    }
+
+    .footer-section ul li a:hover {
+      color: #0D3B66;
+      border-bottom: 1px dashed #0D3B66;
+    }
+
+    .footer-section p,
+    .footer-section a {
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    .footer-section a:hover {
+      text-decoration: underline;
+    }
+
+    .logo-tagline {
+      max-width: 280px;
+    }
+
+    .footer-logo {
+      width: 160px;
+      margin-bottom: 15px;
+    }
+
+    .tagline {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      line-height: 1.4;
+      color: #0D3B66;
+    }
+
+    .footer-bottom {
+      background: #0D3B66;
+      color: white;
+      text-align: center;
+      padding: 18px 20px;
+      font-size: 0.95rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+      padding: 1rem 0;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      padding: 0.5rem 1.2rem;
+      border: 2px solid #444;
+      border-radius: 6px;
+      color: #444;
+      font-weight: 600;
+      width: 150px;
+      text-align: center;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .footer-links a:hover {
+      background-color: #444;
+      color: white;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .card {
+        margin: 2rem 1rem;
+        padding: 2rem 1.5rem;
+      }
+
+      .card h1 {
+        font-size: 2.4rem;
+      }
+
+      .faq-item {
+        font-size: 1.2rem;
+      }
+
+      .faq-answer {
+        font-size: 1.1rem;
+      }
+
+      .contact-button {
+        font-size: 1.1rem;
+        padding: 14px 36px;
+      }
+
+      nav ul {
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqXc4r4wRuxSe_zEwsCB9NUVncHv4ojRYXXA&s" alt="Hathaway Ferguson Logo" />
+  <nav>
+    <ul>
+      <li><a href="index.html#hero" class="active">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="product.html">Products</a></li>
+      <li><a href="faq.html>FAQ</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" aria-label="Hero banner with Frequently Asked Questions title">
+  <div class="hero-overlay">
+    <h1>Frequently Asked Questions</h1>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<main>
+  <div class="card" role="main" aria-label="Frequently Asked Questions">
+    <h1>Frequently Asked Questions</h1>
+
+    <div class="faq-item" tabindex="0" aria-expanded="false" role="button" aria-controls="faq1-answer" id="faq1">
+      <strong>How does the estimating process work?</strong>
+      <div class="faq-answer" id="faq1-answer" aria-labelledby="faq1">
+        Send us a cut list with your contact info.<br>We’ll send back a price in 72 hours or less.
+      </div>
+    </div>
+
+    <div class="faq-item" tabindex="0" aria-expanded="false" role="button" aria-controls="faq2-answer" id="faq2">
+      <strong>What’s the minimum order quantity?</strong>
+      <div class="faq-answer" id="faq2-answer" aria-labelledby="faq2">
+        Our minimum is 50 pieces, which can be multiple part numbers.
+      </div>
+    </div>
+
+    <div class="faq-item" tabindex="0" aria-expanded="false" role="button" aria-controls="faq3-answer" id="faq3">
+      <strong>How does shipping work?</strong>
+      <div class="faq-answer" id="faq3-answer" aria-labelledby="faq3">
+        We can ship directly to your shop or to a job site.
+      </div>
+    </div>
+
+    <div class="faq-item" tabindex="0" aria-expanded="false" role="button" aria-controls="faq4-answer" id="faq4">
+      <strong>What is the lead time for delivery?</strong>
+      <div class="faq-answer" id="faq4-answer" aria-labelledby="faq4">
+        Lead time depends on the complexity of the job and current workload. Typically, we aim for 2-4 weeks.
+      </div>
+    </div>
+
+    <div class="faq-item" tabindex="0" aria-expanded="false" role="button" aria-controls="faq5-answer" id="faq5">
+      <strong>Do you offer custom sheet metal fabrication?</strong>
+      <div class="faq-answer" id="faq5-answer" aria-labelledby="faq5">
+        Yes, we specialize in custom sheet metal fabrication tailored to your specifications.
+      </div>
+    </div>
+
+    <a class="contact-button" href="contact.html">Contact Us</a>
+  </div>
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-container">
+      <div class="footer-section logo-tagline">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqXc4r4wRuxSe_zEwsCB9NUVncHv4ojRYXXA&s" alt="Hathaway Ferguson Logo" class="footer-logo" />
+        <p class="tagline">Specializing in steel plate fabrication, electrical enclosures, steel tanks, and weldments.</p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>1101 E 3rd St.<br />Tulsa, OK 74120</p>
+        <p>Phone: <a href="tel:+9185849700">(918) 584-9700</a></p>
+        <p>Email: <a href="mailto:sales@hathawayferguson.com">sales@hathawayferguson.com</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Hathaway Ferguson. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="contact.html">Request Quote</a>
+      <a href="careers.html">Careers</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-item').forEach((faq) => {
+    faq.addEventListener('click', () => {
+      const isOpen = faq.classList.contains('open');
+      // Close all faq items
+      document.querySelectorAll('.faq-item.open').forEach((openFaq) => {
+        openFaq.classList.remove('open');
+        openFaq.setAttribute('aria-expanded', 'false');
+      });
+      // Toggle current faq item
+      if (!isOpen) {
+        faq.classList.add('open');
+        faq.setAttribute('aria-expanded', 'true');
+      }
+    });
+
+    faq.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        faq.click();
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

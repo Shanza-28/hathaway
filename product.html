@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sheet Metal Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    :root {
+  --primary: #004080;  /* navy blue */
+  --light: #555555;    /* medium gray */
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--dark-overlay);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  color: var(--light);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+header img.logo {
+  height: 50px;
+  user-select: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  color: var(--light);
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1rem;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  left: 0;
+  bottom: -5px;
+  transition: width 0.3s ease;
+}
+
+nav a:hover, nav a:focus {
+  color: var(--primary);
+}
+nav a.active {
+  color: var(--primary);
+  font-weight: 700;
+  border-bottom: 2px solid var(--primary);
+}
+
+
+nav a:hover::after, nav a:focus::after {
+  width: 100%;
+}
+
+.logo {
+  height: 50px;
+  object-fit: contain;
+}
+
+.btn-hero {
+  background-color: #004080; /* Elegant deep blue */
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 64, 128, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-hero:hover,
+.btn-hero:focus {
+  background-color: #0059b3; /* Slightly lighter blue on hover */
+  box-shadow: 0 6px 18px rgba(0, 89, 179, 0.5);
+  outline: none;
+}
+
+      .hero {
+  background-image: url('https://images.unsplash.com/photo-1513828742140-ccaa28f3eda0?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW5kdXN0cmlhbCUyMHBpcGVzfGVufDB8fDB8fHww'); 
+  background-size: cover;
+  background-position: center;
+  height: 70vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  background: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero h1 {
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+/* ============ Footer ============ */
+footer {
+  background: #fdfdfd;
+  color: #333;
+  font-family: 'Lora', serif;
+}
+
+.footer-top {
+  border-bottom: 1px solid #ccc;
+  padding: 50px 20px 30px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1 1 220px;
+  min-width: 220px;
+}
+
+.footer-section h3 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  margin-bottom: 18px;
+  color: #0D3B66;
+  font-size: 1.4rem;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.footer-section ul li a {
+  color: #333;
+  text-decoration: none;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 1px dashed transparent;
+  padding-bottom: 2px;
+}
+
+.footer-section ul li a:hover {
+  color: #0D3B66;
+  border-bottom: 1px dashed #0D3B66;
+}
+
+.footer-section p,
+.footer-section a {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.logo-tagline {
+  max-width: 280px;
+}
+
+.footer-logo {
+  width: 160px;
+  margin-bottom: 15px;
+}
+
+.tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  line-height: 1.4;
+  color: #0D3B66;
+}
+
+.footer-bottom {
+  background: #0D3B66;
+  color: white;
+  text-align: center;
+  padding: 18px 20px;
+  font-size: 0.95rem;
+}
+.footer-links {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: center;    /* center horizontally */
+  gap: 1rem;              /* space between buttons */
+  padding: 1rem 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  padding: 0.5rem 1.2rem;
+  border: 2px solid #444;
+  border-radius: 6px;
+  color: #444;
+  font-weight: 600;
+  width: 150px;           /* fixed width for uniform button size */
+  text-align: center;     /* center text inside buttons */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.footer-links a:hover {
+  background-color: #444;
+  color: white;
+}
+
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+    padding: 0 1rem;
+    text-align: center;
+  }
+}
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .section {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 4rem;
+      gap: 2rem;
+    }
+
+    .section.reverse {
+      flex-direction: row-reverse;
+    }
+
+    .text {
+      flex: 1;
+    }
+
+    .text h2 {
+      font-size: 1.8rem;
+      color: #004080;
+      margin-bottom: 1rem;
+    }
+
+    .text p {
+      font-size: 1rem;
+      color: #444;
+    }
+
+    .image {
+      flex: 1;
+    }
+
+    .image img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      .section,
+      .section.reverse {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+    
+<header>
+  <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqXc4r4wRuxSe_zEwsCB9NUVncHv4ojRYXXA&s" alt="Hathaway Ferguson Logo" />
+  <nav>
+    <ul>
+      <li><a href="index.html#hero">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="faq.html">FAQs</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="product.html">Our Products</a></li>
+    </ul>
+  </nav>
+</header>
+      <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay">
+      <h1>Our Products</h1>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <div class="section">
+      <div class="text">
+        <h2>Everything in sheet metal</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br> <br>
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="image">
+        <img src="https://syedhassan.work/hathawayferguson/wp-content/uploads/2025/04/the-air-conditioning-and-ventilation-system-of-a-large-industrial-building-1.jpg" alt="Sheet Metal Work">
+      </div>
+    </div>
+
+    <div class="section reverse">
+      <div class="text">
+        <h2>26 ga to 10 ga galvanized</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br>  <br>
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="image">
+        <img src="https://syedhassan.work/hathawayferguson/wp-content/uploads/2025/04/industrial-ceiling-with-ductwork-and-piping-system.jpg" alt="Galvanized Metal">
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="text">
+        <h2>24 ga to 16 ga stainless steel</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br>  <br>
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="image">
+        <img src="https://syedhassan.work/hathawayferguson/wp-content/uploads/2025/04/ventilation-duct-fans-and-outdoor-installation.jpg" alt="Stainless Steel">
+      </div>
+    </div>
+
+    <div class="section reverse">
+      <div class="text">
+        <h2>Cold rolled steel</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br>  <br>
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="image">
+        <img src="https://syedhassan.work/hathawayferguson/wp-content/uploads/2025/04/the-air-conditioning-and-ventilation-system-of-a-large-industrial-building-2.jpg" alt="Cold Rolled Steel">
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="text">
+        <h2>Other materials too – copper, aluminum, etc.</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br>  <br>
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="image">
+        <img src="https://syedhassan.work/hathawayferguson/wp-content/uploads/2025/04/the-air-conditioning-and-ventilation-system-of-industrial-building-on-the-roof-1.jpg" alt="Other Metals">
+      </div>
+    </div>
+
+    <div class="section reverse">
+      <div class="text">
+        <h2>Rectangular duct (all done to SMACNA)</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br>  <br>
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="image">
+        <img src="https://syedhassan.work/hathawayferguson/wp-content/uploads/2025/04/industrial-pipes-and-ductwork-in-a-pristine-white-facility.jpg" alt="Rectangular Duct">
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="text">
+        <h2>Round duct</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<br>  <br>
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      </div>
+      <div class="image">
+        <img src="https://syedhassan.work/hathawayferguson/wp-content/uploads/2025/04/the-air-conditioning-and-ventilation-system-1.jpg" alt="Round Duct">
+      </div>
+    </div>
+
+  </div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-container">
+
+      <!-- Logo & Tagline -->
+      <div class="footer-section logo-tagline">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqXc4r4wRuxSe_zEwsCB9NUVncHv4ojRYXXA&s" alt="Hathaway Ferguson Logo" class="footer-logo" />
+        <p class="tagline">Serving Columbus with quality metalwork since 1916.<br>Built on tradition. Driven by craftsmanship.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#products">Our Products</a></li>
+          <li><a href="#faqs">FAQs</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Products -->
+      <div class="footer-section">
+        <h3>Products</h3>
+        <ul>
+          <li>Everything in sheet metal</li>
+          <li>26 ga to 10 ga galvanized</li>
+          <li>24 ga to 16 ga stainless steel</li>
+          <li>Cold rolled steel</li>
+          <li>Rectangular duct (all done to SMACNA)</li>
+          <li>Round duct</li>
+          <li>Other materials too – copper, aluminum, etc.</li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="footer-links">
+        <h3>Get in Touch</h3>
+        <p>📞 <a href="tel:+16142533414">614-253-3414</a></p>
+        <p> ✉️ <a href="mailto:info@hathawayferguson.com">info@hathawayferguson.com</a></p>
+        <p>📍 873 Mt. Vernon Ave, Columbus, OH 43203</p>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 Hathaway Ferguson. All rights reserved.</p>
+  </div>
+</footer>
+
+</body>
+</html>
+
