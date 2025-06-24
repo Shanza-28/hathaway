@@ -331,141 +331,138 @@ a.btn-hero {
 /* =============== About Section =============== */
 .about-section {
   display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  height: auto;  /* remove fixed 100vh to avoid overflow */
+  flex-wrap: nowrap; /* Keep images and text side by side on desktop */
+  max-width: 1200px;
+  margin: 3rem auto;
   padding: 60px 80px;
   box-sizing: border-box;
-  justify-content: center;
   align-items: center;
   gap: 2rem;
+  height: auto; /* Avoid fixed height */
 }
 
-/* Images container */
 .about-images {
-  flex: 1 1 100%;
+  flex: 1;
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-  max-width: 450px;  /* restrict max width */
-  margin: 0 auto;
+  max-width: 450px;
 }
 
 .about-images img {
-  max-width: 100%;
-  height: auto;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
-  position: relative;
-  margin: 0 10px;
+  object-fit: cover;
 }
 
-/* Remove large offsets and fixed heights */
+/* Main image */
 .img1 {
-  height: auto;
-  right: 0;
   position: relative;
   z-index: 2;
+  width: 350px;
+  height: 500px;
+  right: 80px; /* Overlap amount */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
 }
 
+/* Overlapping image */
 .img2 {
-  height: auto;
-  left: 0;
-  position: relative;
+  position: absolute;
+  left: 250px;
   z-index: 1;
+  width: 250px;
+  height: 350px;
   border: 5px solid white;
-  margin-left: -100px; /* slight overlap */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
 }
 
-/* Text container */
+/* Text section */
 .about-text {
-  flex: 1 1 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 0 1rem;
+  flex: 2;
+  min-width: 300px;
+  padding-left: 2rem;
   color: #333;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 0; /* remove big left margin */
+  margin-left: 0;
 }
 
-/* Titles and paragraphs */
-.about-title {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: var(--primary);
-}
+/* Responsive */
 
-.about-subtitle {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #222;
-}
-
-.about-text p {
-  font-size: 1rem;
-  line-height: 1.6;
-  margin-bottom: 1rem;
-}
-
-/* Responsive tweaks */
-
-/* Tablets and below */
+/* Tablets */
 @media (max-width: 992px) {
   .about-section {
     flex-direction: column;
     padding: 40px 20px;
+    height: auto;
   }
 
   .about-images {
-    max-width: 350px;
+    max-width: 100%;
+    justify-content: center;
+    margin-bottom: 2rem;
+    position: relative;
+    height: 400px; /* enough space for overlapping */
+  }
+
+  .img1 {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-70%);
+    width: 280px;
+    height: 400px;
+    right: 0;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
   }
 
   .img2 {
-    margin-left: -50px;
+    position: absolute;
+    left: 60%;
+    top: 80px;
+    width: 180px;
+    height: 250px;
+    border: 4px solid white;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
   }
 
-  .about-title {
-    font-size: 1.75rem;
-  }
-
-  .about-subtitle {
-    font-size: 1.1rem;
-  }
-
-  .about-text p {
-    font-size: 0.95rem;
+  .about-text {
+    margin-left: 0;
+    padding-left: 0;
   }
 }
 
-/* Phones */
+/* Mobile phones */
 @media (max-width: 600px) {
+  .about-section {
+    padding: 20px 10px;
+  }
+
   .about-images {
-    max-width: 100%;
-    margin-bottom: 1.5rem;
+    height: 300px;
+  }
+
+  .img1 {
+    width: 200px;
+    height: 300px;
+    left: 50%;
+    transform: translateX(-60%);
   }
 
   .img2 {
-    margin-left: 0;
+    width: 130px;
+    height: 190px;
+    left: 65%;
+    top: 70px;
     border: 3px solid white;
-  }
-
-  .about-title {
-    font-size: 1.5rem;
-  }
-
-  .about-subtitle {
-    font-size: 1rem;
   }
 
   .about-text p {
     font-size: 0.9rem;
   }
 }
-
 
 
         
