@@ -915,21 +915,53 @@ footer {
 /* ================= Responsive ================= */
 
 
-  @media (min-width: 901px) {
-    .about-section {
-      flex-direction: row;
-      justify-content: center;
-      gap: 20px;
-    }
-    .about-images {
-      max-width: none;
-      width: auto;
-    }
-    .about-images img {
-      max-width: 450px;
-      height: auto;
-    }
+ @media (max-width: 900px) {
+  .about-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    height: auto;
   }
+
+  .about-images {
+    position: relative !important; /* keep relative to position absolute children */
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px; /* controls max width on mobile */
+    height: auto;
+  }
+
+  .about-images img {
+    position: static !important; /* remove absolute */
+    max-width: 48%; 
+    height: auto !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    margin: 0;
+  }
+
+  .img1,
+  .img2 {
+    position: static !important;
+    height: auto !important;
+    left: auto !important;
+    right: auto !important;
+    border: none !important;
+  }
+
+  .about-text {
+    margin-top: 25px;
+    width: 100%;
+    padding: 0 1rem;
+    text-align: center;
+  }
+}
+
+
+
+        
 @media (max-width: 768px) {
   .contact-line {
     flex-direction: column;
