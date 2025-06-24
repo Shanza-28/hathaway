@@ -414,14 +414,13 @@ a.btn-hero {
     padding: 20px;
     margin: 0 auto;
     width: 100%;
-    max-width: 400px; /* Container limit for mobile */
     box-sizing: border-box;
   }
 
   .about-images {
     position: relative;
     width: 100%;
-    max-width: 350px;
+    max-width: 360px;
     margin: 0 auto;
   }
 
@@ -436,7 +435,7 @@ a.btn-hero {
 
   .about-images img.img2 {
     position: absolute;
-    top: 15%;
+    top: 20%;
     left: 55%;
     width: 45%;
     height: auto;
@@ -449,8 +448,9 @@ a.btn-hero {
 
   .about-text {
     margin-top: 25px;
+    margin-left: 0; /* ← fix: remove left shift */
     width: 100%;
-    max-width: 350px;
+    max-width: 360px;
     padding: 0 16px;
     text-align: left;
     color: #333;
@@ -459,6 +459,8 @@ a.btn-hero {
   }
 }
 
+
+        
         
 /* ============== Contact Section ============== */
 #contact {
