@@ -1070,24 +1070,46 @@ footer {
         padding: 0 1rem;
       }
     }
+
         @media (max-width: 900px) {
   .about-section {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    padding: 40px 20px;
+    height: auto;
   }
 
   .about-images {
     width: 100%;
+    flex-direction: row;
     justify-content: center;
+    align-items: flex-start;
+    position: static; /* Remove relative for clean stacking */
+    gap: 10px;
+    flex-wrap: wrap;
   }
 
   .about-images img {
+    position: static !important; /* Remove absolute positioning */
+    height: auto;
     max-width: 45%;
+    border: none;
+    margin: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   }
 
   .about-text {
-    margin-top: 20px;
+    margin-top: 30px;
+    margin-left: 0;
     width: 100%;
+    padding: 0 1rem;
+  }
+
+  .img1,
+  .img2 {
+    height: auto !important;
+    right: 0;
+    left: 0;
   }
 }
 
@@ -1242,7 +1264,7 @@ footer {
       <p><strong>Visit us:</strong> 873 Mt. Vernon Avenue, Columbus, Ohio</p>
       <p><strong>Call:</strong> 614-253-3414 &nbsp; | &nbsp; <strong>Text:</strong> 614-738-0065</p>
       <p><strong>Email:</strong> <a href="mailto:info@hathawayferguson.com">info@hathawayferguson.com</a></p>
- <a href="#About" class="btn-herot">Learn More</a>
+ <a href="#About" class="btn-hero">Learn More</a>
     </div>
   </div>
 </section>
