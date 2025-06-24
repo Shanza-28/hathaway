@@ -277,8 +277,9 @@ nav a:hover::after, nav a:focus::after {
   background-color: #003366;
   transform: translateY(-2px);
 }
-.btn-hero {
-  background-color: #004080; /* Elegant deep blue */
+
+        .btn-hero {
+  background-color: #004080;
   color: white;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
@@ -291,7 +292,15 @@ nav a:hover::after, nav a:focus::after {
   box-shadow: 0 4px 12px rgba(0, 64, 128, 0.3);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-margin-bottom: 5rem;
+  margin-bottom: 5rem;
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* Add this to be safe */
+a.btn-hero {
+  text-decoration: none !important;
+  color: white !important;
 }
 
 .btn-hero:hover,
@@ -470,17 +479,21 @@ margin-bottom: 5rem;
   font-weight: 600;
   color: #0077cc;
 }
-.button-white-text {
-  background-color: #0D3B66;  /* Blue background */
-  color: white;               /* White text */
-  padding: 12px 24px;         /* Some padding */
-  border: none;               /* No border */
-  border-radius: 6px;         /* Rounded corners */
-  font-size: 1rem;            /* Normal font size */
-  cursor: pointer;            /* Pointer cursor on hover */
+
+        .button-white-text {
+  background-color: #0D3B66;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
   transition: background-color 0.3s ease;
- margin-bottom: 5px;
+  margin-bottom: 5px;
+  text-decoration: none;      /* ✅ Removes underline */
+  display: inline-block;      /* ✅ Makes the <a> behave like a button */
 }
+
 
 .button-white-text:hover {
   background-color: #092c4a;  /* Darker blue on hover */
