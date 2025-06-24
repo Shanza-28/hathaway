@@ -916,12 +916,12 @@ footer {
 @media (max-width: 900px) {
   .about-section {
     display: flex;
-    flex-direction: column;  /* stack vertically */
-    align-items: center;     /* center everything */
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
-    height: auto;
     max-width: 400px;
     margin: 0 auto;
+    height: auto;
   }
 
   .about-images {
@@ -929,7 +929,7 @@ footer {
     width: 100%;
     max-width: 350px;
     height: auto;
-    margin: 0 auto;          /* center images container */
+    margin: 0 auto 1.5rem; /* add bottom margin for spacing */
   }
 
   .about-images img.img1 {
@@ -956,16 +956,17 @@ footer {
   }
 
   .about-text {
-    margin-top: 20px;       /* space below images */
-    width: 100%;            /* full width */
-    max-width: 350px;       /* same max width as images container */
-    padding: 0 10px;        /* padding inside container */
-    text-align: right; !important       /* left aligned text */
+    margin-top: 0;
+    width: 100%;
+    max-width: 350px;
+    padding: 0 10px;
+    text-align: left;
     color: #333;
     font-size: 1rem;
     line-height: 1.5;
   }
 }
+
 
 
         
