@@ -407,49 +407,6 @@ a.btn-hero {
   text-decoration: none;
 }
 
-        @media (max-width: 900px) {
-  .about-section {
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
-    height: auto;
-  }
-
-  .about-images {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 10px;
-    flex-wrap: nowrap;
-    position: static; /* Remove positioning */
-    width: 100%;
-  }
-
-  .about-images img {
-    all: unset; /* Reset previous styles */
-    max-width: 45%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-
-  .img1,
-  .img2 {
-    position: static !important;
-    height: auto !important;
-    left: auto !important;
-    right: auto !important;
-    border: none !important;
-  }
-
-  .about-text {
-    margin: 20px auto 0;
-    width: 90%;
-    padding: 0;
-  }
-}
-
         
 /* ============== Contact Section ============== */
 #contact {
@@ -1078,59 +1035,50 @@ footer {
       }
     }
 
-        @media (max-width: 900px) {
+ @media (max-width: 900px) {
   .about-section {
     flex-direction: column;
     align-items: center;
-    padding: 40px 20px;
     height: auto;
+    padding: 20px;
   }
 
   .about-images {
-    width: 100%;
-    flex-direction: row;
+    display: flex !important; /* Ensure flex is applied */
+    flex-direction: row !important;
     justify-content: center;
-    align-items: flex-start;
-    position: static; /* Remove relative for clean stacking */
+    align-items: center;
     gap: 10px;
-    flex-wrap: wrap;
+    width: 100%;
+    flex-wrap: nowrap !important; /* No wrapping */
+    position: static !important;
   }
 
   .about-images img {
-    position: static !important; /* Remove absolute positioning */
-    height: auto;
-    max-width: 45%;
-    border: none;
-    margin: 0;
+    position: static !important;
+    max-width: 48%; /* Just under half width */
+    height: auto !important;
+    border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin: 0;
+  }
+  
+  .img1,
+  .img2 {
+    position: static !important;
+    height: auto !important;
+    left: auto !important;
+    right: auto !important;
+    border: none !important;
   }
 
   .about-text {
-    margin-top: 30px;
-    margin-left: 0;
+    margin-top: 20px;
     width: 100%;
     padding: 0 1rem;
   }
-
-  .img1,
-  .img2 {
-    height: auto !important;
-    right: 0;
-    left: 0;
-  }
 }
 
-/* Mobile: stack images vertically on top, then text below */
-@media (max-width: 600px) {
-  .about-images {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .about-images img {
-    max-width: 100%;
-  }
-}
 
 /* === FAQ Section === */
 /* Hide right side image on mobile and tablet */
