@@ -913,9 +913,7 @@ footer {
 }
 
 /* ================= Responsive ================= */
-
-
- @media (max-width: 900px) {
+@media (max-width: 900px) {
   .about-section {
     flex-direction: column;
     align-items: center;
@@ -924,31 +922,34 @@ footer {
   }
 
   .about-images {
-    position: relative !important; /* keep relative to position absolute children */
-    display: flex;
-    justify-content: center;
-    gap: 15px;
+    position: relative;
     width: 100%;
-    max-width: 400px; /* controls max width on mobile */
+    max-width: 350px;   /* limit max width on mobile */
     height: auto;
+    margin: 0 auto;
   }
 
-  .about-images img {
-    position: static !important; /* remove absolute */
-    max-width: 48%; 
-    height: auto !important;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  .about-images img.img1 {
+    position: relative;
+    width: 100%;
+    height: auto;
     border-radius: 12px;
-    margin: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 2;
   }
 
-  .img1,
-  .img2 {
-    position: static !important;
-    height: auto !important;
-    left: auto !important;
-    right: auto !important;
-    border: none !important;
+  .about-images img.img2 {
+    position: absolute;
+    top: 20%;             /* Adjust vertical position */
+    left: 60%;            /* Adjust horizontal position */
+    width: 50%;           /* Smaller width */
+    height: auto;
+    max-height: 70%;      /* Shorter height */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 3;
+    border: 3px solid white;  /* Optional white border to highlight overlap */
+    object-fit: cover;
   }
 
   .about-text {
@@ -958,7 +959,6 @@ footer {
     text-align: center;
   }
 }
-
 
 
         
@@ -992,6 +992,7 @@ footer {
   }
   .product-header h2 {
     font-size: 1.6rem;
+    align: center;
   }
 }
 
@@ -1004,22 +1005,39 @@ footer {
         max-width: 400px;
         width: 100%;
       }
-      .phone-section {
-        flex-direction: column-reverse;
-        text-align: center;
-        padding: 3rem 1rem;
-      }
-      .phone-section .content {
-        margin-top: 2rem;
-      }
-      .phone-section button {
-        width: 100%;
-        font-size: 1.125rem;
-      }
-      .phone-section .phone-image {
-        min-width: auto;
-      }
-    }
+ @media (max-width: 900px) {
+  .phone-section {
+    display: flex;
+    flex-direction: column;  /* Normal column, image on top, content below */
+    align-items: center;     /* Center horizontally */
+    text-align: center;      /* Center text */
+    padding: 2.5rem 1.5rem;
+    gap: 2rem;               /* Space between image and content */
+  }
+
+  .phone-section .phone-image {
+    max-width: 300px;        /* Limit image width */
+    width: 80%;              /* Responsive scaling */
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .phone-section .content {
+    margin: 0;
+    width: 100%;
+  }
+
+  .phone-section button {
+    width: 100%;
+    max-width: 300px;        /* Prevent button from getting too wide */
+    font-size: 1.125rem;
+    padding: 0.75rem 1.5rem;
+    margin: 1rem auto 0;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+}
+
 
     @media (max-width: 576px) {
       header .container {
@@ -1062,50 +1080,6 @@ footer {
     }
 
  @media (max-width: 900px) {
-  .about-section {
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-    padding: 20px;
-  }
-
-  .about-images {
-    display: flex !important; /* Ensure flex is applied */
-    flex-direction: row !important;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    width: 100%;
-    flex-wrap: nowrap !important; /* No wrapping */
-    position: static !important;
-  }
-
-  .about-images img {
-    position: static !important;
-    max-width: 48%; /* Just under half width */
-    height: auto !important;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin: 0;
-  }
-  
-  .img1,
-  .img2 {
-    position: static !important;
-    height: auto !important;
-    left: auto !important;
-    right: auto !important;
-    border: none !important;
-  }
-
-  .about-text {
-    margin-top: 20px;
-    width: 100%;
-    padding: 0 1rem;
-  }
-}
-
-
 /* === FAQ Section === */
 /* Hide right side image on mobile and tablet */
 .faq-card {
