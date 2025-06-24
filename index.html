@@ -406,53 +406,51 @@ a.btn-hero {
   font-weight: 600;
   text-decoration: none;
 }
-   /* ✅ Media query for tablets and smaller screens */
-    @media (max-width: 768px) {
-      .about-section {
-        flex-direction: column;
-        height: auto;
-        padding: 40px 20px;
-      }
 
-      .about-images {
-        justify-content:flex;
-        margin-bottom: 2rem;
-      }
+        @media (max-width: 900px) {
+  .about-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    height: auto;
+  }
 
-      .img1 {
-  position: relative;
-  z-index: 1;
-  height: 440px;
-  right: 150px;
+  .about-images {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+    flex-wrap: nowrap;
+    position: static; /* Remove positioning */
+    width: 100%;
+  }
+
+  .about-images img {
+    all: unset; /* Reset previous styles */
+    max-width: 45%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .img1,
+  .img2 {
+    position: static !important;
+    height: auto !important;
+    left: auto !important;
+    right: auto !important;
+    border: none !important;
+  }
+
+  .about-text {
+    margin: 20px auto 0;
+    width: 90%;
+    padding: 0;
+  }
 }
 
-/* Overlapping image (behind) */
-.img2 {
-  position: absolute;
-  left: 190px; /* Controls how much it shifts right */    
-  z-index: 2;
-  height: 300px;
-   border: 5px solid white; 
-}
-
-      .about-text {
-        margin-left: 0;
-        padding-left: 0;
-        text-align: center;
-      }
-
-      .about-title {
-        font-size: 2rem;
-      }
-
-      .about-subtitle {
-        font-size: 1.25rem;
-      }
-
-      .about-text p {
-        font-size: 1rem;
-      }
-    }
+        
 /* ============== Contact Section ============== */
 #contact {
   padding: 20px;
