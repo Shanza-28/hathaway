@@ -331,62 +331,55 @@ a.btn-hero {
 /* =============== About Section =============== */
 .about-section {
   display: flex;
-  flex-wrap: nowrap; /* Keep images and text side by side on desktop */
   max-width: 1200px;
   margin: 3rem auto;
   padding: 60px 80px;
   box-sizing: border-box;
   align-items: center;
   gap: 2rem;
-  height: auto; /* Avoid fixed height */
+  height: auto;
+  flex-wrap: nowrap;
 }
 
 .about-images {
-  flex: 1;
   position: relative;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  flex: 1 1 450px;
   max-width: 450px;
+  height: 500px; /* fixed height to contain images */
 }
 
-.about-images img {
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-  object-fit: cover;
-}
-
-/* Main image */
 .img1 {
   position: relative;
-  z-index: 2;
   width: 350px;
   height: 500px;
-  right: 80px; /* Overlap amount */
+  border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  object-fit: cover;
+  z-index: 2;
+  right: 0; /* no shifting */
 }
 
-/* Overlapping image */
 .img2 {
   position: absolute;
-  left: 250px;
-  z-index: 1;
+  top: 100px; /* controls vertical position */
+  left: 250px; /* overlap horizontally */
   width: 250px;
   height: 350px;
+  border-radius: 12px;
   border: 5px solid white;
   box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  object-fit: cover;
+  z-index: 1;
 }
 
-/* Text section */
+/* Text container */
 .about-text {
-  flex: 2;
-  min-width: 300px;
-  padding-left: 2rem;
+  flex: 2 1 600px;
   color: #333;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-left: 2rem;
   margin-left: 0;
 }
 
@@ -397,49 +390,43 @@ a.btn-hero {
   .about-section {
     flex-direction: column;
     padding: 40px 20px;
-    height: auto;
   }
 
   .about-images {
-    max-width: 100%;
-    justify-content: center;
-    margin-bottom: 2rem;
-    position: relative;
-    height: 400px; /* enough space for overlapping */
+    width: 100%;
+    max-width: 350px;
+    height: 400px;
+    margin: 0 auto 2rem;
   }
 
   .img1 {
     position: absolute;
-    left: 50%;
-    transform: translateX(-70%);
     width: 280px;
     height: 400px;
-    right: 0;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.2);
+    top: 0;
+    left: 50%;
+    transform: translateX(-70%);
   }
 
   .img2 {
     position: absolute;
-    left: 60%;
-    top: 80px;
     width: 180px;
     height: 250px;
+    top: 80px;
+    left: 60%;
+    transform: translateX(-50%);
     border: 4px solid white;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
   }
 
   .about-text {
-    margin-left: 0;
     padding-left: 0;
+    max-width: 100%;
+    text-align: center;
   }
 }
 
 /* Mobile phones */
 @media (max-width: 600px) {
-  .about-section {
-    padding: 20px 10px;
-  }
-
   .about-images {
     height: 300px;
   }
@@ -447,6 +434,7 @@ a.btn-hero {
   .img1 {
     width: 200px;
     height: 300px;
+    top: 0;
     left: 50%;
     transform: translateX(-60%);
   }
@@ -454,8 +442,9 @@ a.btn-hero {
   .img2 {
     width: 130px;
     height: 190px;
-    left: 65%;
     top: 70px;
+    left: 65%;
+    transform: translateX(-50%);
     border: 3px solid white;
   }
 
