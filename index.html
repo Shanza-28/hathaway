@@ -33,22 +33,22 @@ body {
   margin: 0;
   padding: 0;
 }
-@media (max-width: 768px) {
-  .about-section {
+@media (max-width: 900px) {
+  .about {
     flex-direction: column;
-    height: auto;
-    padding: 20px;
+    align-items: center;
+    padding: 1rem;
   }
-  
-  .about-text {
-    margin-left: 0;
-    padding-left: 0;
-    min-width: auto;
-  }
-  
+
   .about-images {
-    justify-content: center;
-    margin-bottom: 20px;
+    max-width: 80%;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text {
+    min-width: auto;
+    padding-left: 0;
+    text-align: center;
   }
 }
 
