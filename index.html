@@ -329,180 +329,103 @@ a.btn-hero {
 }
 
 /* =============== About Section =============== */
-.about {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: 3rem auto;
-  padding: 4rem 1rem;
-  gap: 2rem;
-  align-items: stretch;
-}
-
 .about-section {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  height: 100vh;
+  height: auto;  /* remove fixed 100vh to avoid overflow */
   padding: 60px 80px;
   box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 }
 
+/* Images container */
 .about-images {
-  flex: 1;
+  flex: 1 1 100%;
   position: relative;
   display: flex;
-   justify-content: flex-start; /* Change from center to start */
+  justify-content: center;
   align-items: center;
+  max-width: 450px;  /* restrict max width */
+  margin: 0 auto;
 }
 
 .about-images img {
-  max-width: 450px;
-  object-fit: cover;
+  max-width: 100%;
+  height: auto;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
+  position: relative;
+  margin: 0 10px;
 }
 
-/* Main image (in front) */
+/* Remove large offsets and fixed heights */
 .img1 {
+  height: auto;
+  right: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.img2 {
+  height: auto;
+  left: 0;
   position: relative;
   z-index: 1;
-  height: 880px;
-  right: 150px;
+  border: 5px solid white;
+  margin-left: -100px; /* slight overlap */
 }
 
-/* Overlapping image (behind) */
-.img2 {
-  position: absolute;
-  left: 190px; /* Controls how much it shifts right */    
-  z-index: 2;
-  height: 600px;
-   border: 5px solid white; 
-}
-
-
-
-
-
+/* Text container */
 .about-text {
-  flex: 2;
-  min-width: 300px;
-  padding-left: 1rem;
+  flex: 1 1 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 1rem;
   color: #333;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 230px;
+  margin-left: 0; /* remove big left margin */
 }
 
+/* Titles and paragraphs */
 .about-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin-bottom: 0.5rem;
   color: var(--primary);
 }
 
 .about-subtitle {
-  font-family: 'Playfair Display' , serif;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 600;
   color: #222;
 }
 
 .about-text p {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
 }
 
-.about-contact p {
-  margin: 0.5rem 0;
-}
+/* Responsive tweaks */
 
-.about-contact a {
-  color: var(--primary);
-  font-weight: 600;
-  text-decoration: none;
-}
-
- /* Tablets (medium screens) */
+/* Tablets and below */
 @media (max-width: 992px) {
   .about-section {
     flex-direction: column;
-    height: auto;
     padding: 40px 20px;
   }
 
   .about-images {
-    justify-content: center;
-    margin-bottom: 2rem;
-  }
-
-  .img1 {
-    height: 500px;
-    right: 0;
-    position: relative;
+    max-width: 350px;
   }
 
   .img2 {
-    position: relative;
-    left: 0;
-    height: 350px;
-    border: 3px solid white;
-    margin-top: -150px; /* To overlap slightly */
-    z-index: 0;
-  }
-
-  .about-text {
-    margin-left: 0;
-    padding-left: 0;
-    flex: unset;
-  }
-
-  .about-title {
-    font-size: 2rem;
-  }
-
-  .about-subtitle {
-    font-size: 1.25rem;
-  }
-
-  .about-text p {
-    font-size: 1rem;
-  }
-}
-
-/* Phones (small screens) */
-@media (max-width: 600px) {
-  .about-section {
-    padding: 20px 10px;
-  }
-
-  .about-images img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-
-  .img1,
-  .img2 {
-    position: relative;
-    height: auto;
-    left: 0;
-    right: 0;
-    border: 3px solid white;
-    margin: 0 auto;
-    display: block;
-  }
-
-  .img2 {
-    margin-top: -100px; /* Overlap effect */
-  }
-
-  .about-text {
-    margin-left: 0;
-    padding-left: 0;
+    margin-left: -50px;
   }
 
   .about-title {
@@ -517,6 +440,32 @@ a.btn-hero {
     font-size: 0.95rem;
   }
 }
+
+/* Phones */
+@media (max-width: 600px) {
+  .about-images {
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+
+  .img2 {
+    margin-left: 0;
+    border: 3px solid white;
+  }
+
+  .about-title {
+    font-size: 1.5rem;
+  }
+
+  .about-subtitle {
+    font-size: 1rem;
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+  }
+}
+
 
 
         
