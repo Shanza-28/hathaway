@@ -916,20 +916,20 @@ footer {
 @media (max-width: 900px) {
   .about-section {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: column;  /* stack vertically */
+    align-items: center;     /* center everything */
     padding: 20px;
     height: auto;
-    max-width: 400px; /* Limit overall width for better layout */
+    max-width: 400px;
     margin: 0 auto;
   }
 
   .about-images {
     position: relative;
     width: 100%;
-    max-width: 350px; /* Limit max width */
+    max-width: 350px;
     height: auto;
-    margin: 0 auto 1.5rem; /* Center and add bottom margin */
+    margin: 0 auto;          /* center images container */
   }
 
   .about-images img.img1 {
@@ -939,29 +939,28 @@ footer {
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 2;
-    transition: all 0.3s ease;
   }
 
   .about-images img.img2 {
     position: absolute;
-    top: 20%; /* Adjust vertical position */
-    left: 60%; /* Adjust horizontal position */
-    width: 50%; /* Smaller width */
-    max-height: 70%; /* Shorter height */
+    top: 20%;
+    left: 60%;
+    width: 50%;
+    max-height: 70%;
     height: auto;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     z-index: 3;
     border: 3px solid white;
     object-fit: cover;
-    transition: all 0.3s ease;
   }
 
   .about-text {
-    margin-top: 0;
-    width: 100%;
-    padding: 0 1rem;
-    text-align: left;
+    margin-top: 20px;       /* space below images */
+    width: 100%;            /* full width */
+    max-width: 350px;       /* same max width as images container */
+    padding: 0 10px;        /* padding inside container */
+    text-align: left;       /* left aligned text */
     color: #333;
     font-size: 1rem;
     line-height: 1.5;
