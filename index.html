@@ -425,7 +425,98 @@ a.btn-hero {
   text-decoration: none;
 }
 
- 
+ /* Tablets (medium screens) */
+@media (max-width: 992px) {
+  .about-section {
+    flex-direction: column;
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .about-images {
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .img1 {
+    height: 500px;
+    right: 0;
+    position: relative;
+  }
+
+  .img2 {
+    position: relative;
+    left: 0;
+    height: 350px;
+    border: 3px solid white;
+    margin-top: -150px; /* To overlap slightly */
+    z-index: 0;
+  }
+
+  .about-text {
+    margin-left: 0;
+    padding-left: 0;
+    flex: unset;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+}
+
+/* Phones (small screens) */
+@media (max-width: 600px) {
+  .about-section {
+    padding: 20px 10px;
+  }
+
+  .about-images img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .img1,
+  .img2 {
+    position: relative;
+    height: auto;
+    left: 0;
+    right: 0;
+    border: 3px solid white;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .img2 {
+    margin-top: -100px; /* Overlap effect */
+  }
+
+  .about-text {
+    margin-left: 0;
+    padding-left: 0;
+  }
+
+  .about-title {
+    font-size: 1.75rem;
+  }
+
+  .about-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+  }
+}
 
 
         
