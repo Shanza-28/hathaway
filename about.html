@@ -897,23 +897,6 @@ footer {
 
 /* ================= Responsive ================= */
 @media (max-width: 900px) {
-  .about {
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-  }
-
-  .about-images {
-    max-width: 50%;
-    margin-bottom: 1.5rem;
-  }
-  .about-text {
-    min-width: auto;
-    padding-left: 0;
-    text-align: left !important;
-    flex: 2 1 600px
-}
-}
   .contact-card .btn-main {
     width: 100%;
     max-width: none;
@@ -1226,7 +1209,24 @@ height:auto;
   }
 }
 
+@media (max-width: 900px) {
+  .about {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
 
+  .about-images {
+    max-width: 50%;
+    margin-bottom: 1.5rem;
+  }
+  .about-text {
+    min-width: auto;
+    padding-left: 0;
+    text-align: left !important;
+    flex: 2 1 600px
+}
+}
   @keyframes scrollTestimonials {
     0% {
       transform: translateX(0);
@@ -1356,10 +1356,6 @@ height:auto;
   .btn-main, .btn-hero {
     padding: 10px 20px;
     font-size: 1rem;
-  }
-  .about-text p {
-    font-size: 1rem;
-    line-height: 1.4;
   }
   .product-header h2 {
     font-size: 1.5rem;
