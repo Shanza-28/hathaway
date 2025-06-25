@@ -897,23 +897,25 @@ footer {
 
 /* ================= Responsive ================= */
 @media (max-width: 900px) {
+@media (max-width: 900px) {
   .about {
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    padding: 1rem;
   }
+
   .about-images {
-    max-width: 90%;
-    margin-bottom: 2rem;
+    max-width: 50%;
+    margin-bottom: 1.5rem;
   }
-  .about-images .img2 {
-    position: static;
-    margin-top: 1rem;
-  }
+
   .about-text {
-    padding: 0;
-    width: 100%;
+    min-width: auto;
+    padding-left: 0;
+    text-align: left !important;
+    flex: 2 1 600px;
   }
+}
   .contact-card .btn-main {
     width: 100%;
     max-width: none;
