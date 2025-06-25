@@ -394,24 +394,34 @@ margin-bottom: 5rem;
   font-weight: 600;
   text-decoration: none;
 }
-@media (max-width: 900px) {
-  .about-images {
+
+        @media (max-width: 900px) {
+  .about {
     flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
   }
 
-  .img1, .img2 {
-    margin: 0;
-    max-width: 90%;
+  .about-section {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .about-images {
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .img1,
+  .img2 {
+    width: 200px;
   }
 
   .img1 {
-    z-index: 1;
+    margin-right: -40px; /* Overlap still happens */
   }
 
-  .img2 {
-    z-index: 2;
-    margin-top: -80px; /* Optional: keep slight overlap even on mobile */
-  }
   .about-text {
     margin-left: 0;
     padding: 0 1rem;
@@ -426,7 +436,6 @@ margin-bottom: 5rem;
     font-size: 1.3rem;
   }
 }
-
 /* ============== Contact Section ============== */
 #contact {
   padding: 20px;
