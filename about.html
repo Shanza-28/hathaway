@@ -1122,43 +1122,29 @@ height:auto;
 
 
 @media (max-width: 600px) {
-  .testimonial-text {
-  font-size: 0.95rem;        /* readable on small screens */
-  line-height: 1.6;          /* adds breathing room */
-  color: #444;               /* softer than pure black */
-  margin-bottom: 0.75rem;
-  padding: 0 0.5rem;         /* prevents touching card edges */
-  text-align: center;        /* keeps layout balanced */
-  font-family: "Inter", sans-serif; /* optional: use a clean modern font */
-}
-
   .testimonial-card {
-    width: 90%;                  /* full width on mobile */
+    width: 90%;
     max-width: 350px;
     padding: 1rem;
-    margin: 0.75rem auto;        /* space between cards */
+    margin: 0.75rem auto;     /* ensures center alignment */
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     text-align: center;
-  }
-
-  .testimonial-card .graphic {
-    font-size: 1.4rem;
-    margin-bottom: 0.75rem;
   }
 
   .testimonial-card .testimonial-text {
     font-size: 0.95rem;
-    line-height: 1.5;
+    line-height: 1.6;
     margin-bottom: 0.75rem;
-    color: #444;
     padding: 0 0.5rem;
+    color: #444;
+    text-align: center;
   }
 
+  .testimonial-card .graphic,
   .testimonial-card .stars {
-    font-size: 1.1rem;
-    color: #f4b400;
+    text-align: center;
     margin-bottom: 0.5rem;
   }
 
