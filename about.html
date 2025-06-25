@@ -1120,16 +1120,29 @@ height:auto;
 }
 
 
+@media (max-width: 600px) {
+  .testimonials {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-@media (max-width: 900px) {
   .testimonial-card {
     width: 90%;
     max-width: 350px;
     padding: 1rem;
-    margin: 0.75rem auto;     /* ensures center alignment */
+    margin: 0.75rem auto;
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+  }
+
+  .testimonial-card .graphic {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
     text-align: center;
   }
 
@@ -1142,10 +1155,11 @@ height:auto;
     text-align: center;
   }
 
-  .testimonial-card .graphic,
   .testimonial-card .stars {
-    text-align: center;
+    font-size: 1.1rem;
+    color: #f4b400;
     margin-bottom: 0.5rem;
+    text-align: center;
   }
 
   .testimonial-card .client-photo {
@@ -1153,7 +1167,8 @@ height:auto;
     height: 50px;
     border-radius: 50%;
     object-fit: cover;
-    margin: 0 auto;
+    margin: 0 auto 0.75rem;
+    display: block;
   }
 }
 
