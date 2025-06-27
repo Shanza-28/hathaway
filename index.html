@@ -34,26 +34,6 @@ body {
   padding: 0;
 }
 
-        @media (max-width: 900px) {
-  .about {
-    flex-direction: column;
-    align-items: center;
-    padding: 1rem;
-  }
-
-  .about-images {
-    max-width: 50%;
-    margin-bottom: 1.5rem;
-  }
-
-  .about-text {
-    min-width: auto;
-    padding-left: 0;
-    text-align: left !important;
-    flex: 2 1 600px;
-  }
-}
-
 /* ================== Header ================== */
 header {
   position: fixed;
@@ -334,6 +314,7 @@ a.btn-hero {
 /* =============== About Section =============== */
 .about-section {
   display: flex;
+  flex-direction: column; /* default for mobile */
   max-width: 1200px;
   margin: 3rem auto;
   padding: 60px 80px;
@@ -341,14 +322,21 @@ a.btn-hero {
   align-items: center;
   gap: 2rem;
   height: auto;
-  flex-wrap: nowrap;
+}
+
+/* Row layout only on desktop */
+@media (min-width: 1024px) {
+  .about-section {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 
 .about-images {
   position: relative;
   flex: 1 1 450px;
   max-width: 450px;
-  height: 500px; /* fixed height to contain images */
+  height: 500px;
 }
 
 .img1 {
@@ -359,13 +347,13 @@ a.btn-hero {
   box-shadow: 0 6px 18px rgba(0,0,0,0.2);
   object-fit: cover;
   z-index: 1;
-  right: 0; /* no shifting */
+  right: 0;
 }
 
 .img2 {
   position: absolute;
-  top: 100px; /* controls vertical position */
-  left: 250px; /* overlap horizontally */
+  top: 100px;
+  left: 250px;
   width: 250px;
   height: 350px;
   border-radius: 12px;
@@ -375,7 +363,6 @@ a.btn-hero {
   z-index: 2;
 }
 
-/* Text container */
 .about-text {
   flex: 2;
   min-width: 300px;
@@ -384,20 +371,14 @@ a.btn-hero {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center; /* center by default */
 }
 
-/* Apply left margin only on desktops/laptops */
+/* On large screens, left-align and add margin */
 @media (min-width: 1024px) {
   .about-text {
-    margin-left: 2rem;
-  }
-}
-
-
-/* Apply margin-left only on larger screens */
-@media (min-width: 1024px) {
-  .about-text {
-    margin-left: 230px;
+    text-align: left;
+    margin-left: 2rem; /* enough spacing from image */
   }
 }
 
@@ -409,7 +390,7 @@ a.btn-hero {
 }
 
 .about-subtitle {
-  font-family: 'Playfair Display' , serif;
+  font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
   font-weight: 600;
   color: #222;
@@ -421,13 +402,7 @@ a.btn-hero {
   margin-bottom: 1.5rem;
 }
 
-
-/* Responsive */
-
-/* Tablets */
-
-
-/* Mobile phones */
+/* Responsive tweaks for phones */
 @media (max-width: 600px) {
   .about-images {
     height: 300px;
