@@ -351,7 +351,13 @@ margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-left: 230px;
+}
+
+/* Apply margin-left only on larger screens */
+@media (min-width: 1024px) {
+  .about-text {
+    margin-left: 230px;
+  }
 }
 
 .about-title {
