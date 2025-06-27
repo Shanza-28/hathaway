@@ -331,6 +331,7 @@ a.btn-hero {
 }
 
 /* =============== About Section =============== */
+/* =============== About Section =============== */
 .about-section {
   display: flex;
   max-width: 1200px;
@@ -376,14 +377,42 @@ a.btn-hero {
 
 /* Text container */
 .about-text {
-  flex: 2 1 600px;
+  flex: 2;
+  min-width: 300px;
+  padding-left: 1rem;
   color: #333;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 2rem;
-  margin-left: 0;
 }
+
+/* Apply margin-left only on larger screens */
+@media (min-width: 1024px) {
+  .about-text {
+    margin-left: 230px;
+  }
+}
+
+.about-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.about-subtitle {
+  font-family: 'Playfair Display' , serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
 
 /* Responsive */
 
