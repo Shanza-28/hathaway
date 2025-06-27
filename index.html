@@ -314,20 +314,20 @@ a.btn-hero {
 /* =============== About Section =============== */
 .about-section {
   display: flex;
-  flex-direction: column; /* default for mobile */
+  flex-direction: column; /* stack by default (mobile) */
   max-width: 1200px;
   margin: 3rem auto;
-  padding: 60px 80px;
+  padding: 60px 40px;
   box-sizing: border-box;
-  align-items: center;
   gap: 2rem;
-  height: auto;
+  align-items: center;
 }
 
-/* Row layout only on desktop */
+/* Row layout on desktop/laptop */
 @media (min-width: 1024px) {
   .about-section {
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
   }
 }
@@ -341,13 +341,12 @@ a.btn-hero {
 
 .img1 {
   position: relative;
-  width: 350px;
-  height: 500px;
+  width: 100%;
+  height: 100%;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.2);
   object-fit: cover;
   z-index: 1;
-  right: 0;
 }
 
 .img2 {
@@ -364,22 +363,19 @@ a.btn-hero {
 }
 
 .about-text {
-  flex: 2;
-  min-width: 300px;
-  margin-top: 0px;
-  padding-left: 10rem;
+  flex: 1;
   color: #333;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  text-align: center; /* center by default */
+  text-align: center; /* mobile: center text */
 }
 
-/* On large screens, left-align and add margin */
+/* On desktop: align left and add spacing */
 @media (min-width: 1024px) {
   .about-text {
     text-align: left;
-    margin-left: 600px; /* enough spacing from image */
+    padding-left: 2rem;
   }
 }
 
@@ -400,10 +396,10 @@ a.btn-hero {
 .about-text p {
   font-size: 1.1rem;
   line-height: 1.8;
-  margin-top: 0rem;
+  margin-bottom: 1.5rem;
 }
 
-/* Responsive tweaks for phones */
+/* Mobile-specific tweaks */
 @media (max-width: 600px) {
   .about-images {
     height: 300px;
@@ -412,9 +408,7 @@ a.btn-hero {
   .img1 {
     width: 200px;
     height: 300px;
-    top: 0;
-    left: 50%;
-    transform: translateX(-60%);
+    transform: translateX(-10%);
   }
 
   .img2 {
@@ -429,11 +423,7 @@ a.btn-hero {
   .about-text p {
     font-size: 0.9rem;
   }
-  .about-text {
-    margin-left: 0px;
-  }
 }
-
 
         
         
