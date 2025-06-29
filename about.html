@@ -299,50 +299,61 @@ margin-bottom: 5rem;
 }
 
 /* =============== About Section =============== */
-.about-section {
+.about {
   display: flex;
+  flex-wrap: wrap;
   max-width: 1200px;
   margin: 3rem auto;
+  padding: 4rem 1rem;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.about-section {
+  display: flex;
+  width: 100%;
+  height: 100vh;
   padding: 60px 80px;
   box-sizing: border-box;
-  align-items: center;
-  gap: 2rem;
-  height: auto;
-  flex-wrap: nowrap;
 }
 
 .about-images {
+  flex: 1;
   position: relative;
-  flex: 1 1 450px;
-  max-width: 450px;
-  height: 500px; /* fixed height to contain images */
+  display: flex;
+   justify-content: flex-start; /* Change from center to start */
+  align-items: center;
 }
 
+.about-images img {
+  max-width: 450px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Main image (in front) */
 .img1 {
   position: relative;
-  width: 350px;
-  height: 500px;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-  object-fit: cover;
   z-index: 1;
-  right: 0; /* no shifting */
+  height: 880px;
+  right: 150px;
 }
 
+/* Overlapping image (behind) */
 .img2 {
   position: absolute;
-  top: 100px; /* controls vertical position */
-  left: 250px; /* overlap horizontally */
-  width: 250px;
-  height: 350px;
-  border-radius: 12px;
-  border: 5px solid white;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-  object-fit: cover;
+  left: 190px; /* Controls how much it shifts right */    
   z-index: 2;
+  height: 600px;
+   border: 5px solid white; 
 }
 
-/* Text container */
+
+
+
+
 .about-text {
   flex: 2;
   min-width: 300px;
@@ -351,13 +362,7 @@ margin-bottom: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-/* Apply margin-left only on larger screens */
-@media (min-width: 1024px) {
-  .about-text {
-    margin-left: 230px;
-  }
+  margin-left: 230px;
 }
 
 .about-title {
@@ -380,19 +385,29 @@ margin-bottom: 5rem;
   margin-bottom: 1.5rem;
 }
 
+.about-contact p {
+  margin: 0.5rem 0;
+}
 
-/* Responsive */
+.about-contact a {
+  color: var(--primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+   /* ✅ Media query for tablets and smaller screens */
+    @media (max-width: 768px) {
+      .about-section {
+        flex-direction: column;
+        height: auto;
+        padding: 40px 20px;
+      }
 
-/* Tablets */
+      .about-images {
+        justify-content: center;
+        margin-bottom: 2rem;
+      }
 
-
-/* Mobile phones */
-@media (max-width: 600px) {
-  .about-images {
-    height: 300px;
-  }
-
-  .img1 {
+       .img1 {
     width: 200px;
     height: 300px;
     top: 0;
@@ -409,10 +424,24 @@ margin-bottom: 5rem;
     border: 3px solid white;
   }
 
-  .about-text p {
-    font-size: 0.9rem;
-  }
-}
+      .about-text {
+        margin-left: 0;
+        padding-left: 0;
+        text-align: center;
+      }
+
+      .about-title {
+        font-size: 2rem;
+      }
+
+      .about-subtitle {
+        font-size: 1.25rem;
+      }
+
+      .about-text p {
+        font-size: 1rem;
+      }
+    }
 
 
 /* ============== Contact Section ============== */
