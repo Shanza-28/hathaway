@@ -1130,56 +1130,53 @@ height:auto;
 
 
 @media (max-width: 600px) {
-  .testimonials {
-    width: 100%;
-    padding: 1rem;
-    display: flex;
+  .testimonial-section {
     flex-direction: column;
-    align-items: center;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
+
+  .left-content {
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
+  }
+
+  .left-content h2 {
+    font-size: 2rem;
+  }
+
+  .left-content p {
+    font-size: 1rem;
+  }
+
+  .right-carousel {
+    max-width: 100%;
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+  }
+
+  .carousel-track {
+    gap: 1rem;
+    padding-left: 0.5rem;
   }
 
   .testimonial-card {
     width: 90%;
-    max-width: 350px;
+    max-width: 320px;
+    margin: 0 auto;
     padding: 1rem;
-    margin: 0.75rem auto;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     text-align: center;
   }
 
-  .testimonial-card .graphic {
-    font-size: 1.5rem;
-    margin-bottom: 0.75rem;
-    text-align: center;
-  }
-
+  .testimonial-card .graphic,
+  .testimonial-card .stars,
   .testimonial-card .testimonial-text {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 0.75rem;
-    padding: 0 0.5rem;
-    color: #444;
     text-align: center;
-  }
-
-  .testimonial-card .stars {
-    font-size: 1.1rem;
-    color: #f4b400;
-    margin-bottom: 0.5rem;
-    text-align: center;
-  }
-
-  .testimonial-card .client-photo {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin: 0 auto 0.75rem;
-    display: block;
   }
 }
+
 
 
   @keyframes scrollTestimonials {
@@ -1404,14 +1401,14 @@ height:auto;
       <!-- Repeat testimonial cards as needed -->
       <div class="testimonial-card">
         <div class="graphic">“</div>
-        <p class="testimonial-text">>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+        <p class="testimonial-text">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
         <div class="stars">⭐⭐⭐⭐⭐</div>
         <img class= "client-photo" src="https://randomuser.me/api/portraits/women/45.jpg" class="client-photo" alt="Client" />
       </div>
 
       <div class="testimonial-card">
         <div class="graphic">“</div>
-        <p class="testimonial-text">>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+        <p class="testimonial-text">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
         <div class="stars">⭐⭐⭐⭐⭐</div>
         <img class= "client-photo" src="https://randomuser.me/api/portraits/men/45.jpg" alt="Client" />
       </div>
@@ -1426,7 +1423,7 @@ height:auto;
       <!-- Duplicate for looping -->
       <div class="testimonial-card">
         <div class="graphic">“</div>
-        <p class="testimonial-text">>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
+        <p class="testimonial-text">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.</p>
         <div class="stars">⭐⭐⭐⭐⭐</div>
         <img class= "client-photo" src="https://randomuser.me/api/portraits/men/40.jpg" class="client-photo" alt="Client" />
       </div>
