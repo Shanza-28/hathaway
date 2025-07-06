@@ -457,78 +457,42 @@ a.btn-hero {
 /* ============== Contact Section ============== */
 #contact {
   padding: 20px;
+  background-color: #f0f8ff; /* light bluish-white */
 }
 
 .contact-line {
   display: flex;
-  align-items: center;
+  align-items: center; /* vertically center all */
   gap: 20px;
   padding: 20px;
-  background-color: #f9f9f9;
-  flex-wrap: wrap; /* allows wrapping on small screens */
+  flex-wrap: nowrap;  /* prevent wrapping */
 }
 
 .contact-line .icon {
   width: 40px;
   height: 40px;
-  flex-shrink: 0; /* prevent shrinking */
+  flex-shrink: 0;
 }
 
 .contact-text {
   flex: 1;
   font-size: 16px;
   line-height: 1.5;
-  min-width: 200px; /* prevent too small */
+  display: flex;
+  align-items: center; /* vertically center text inline */
 }
 
 .btn-hero {
+  flex-shrink: 0; /* keep button size */
   display: flex;
-  align-items: center;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  padding: 10px 16px;
-  border-radius: 5px;
-  flex-shrink: 0; /* prevent shrinking */
-  min-width: 180px;
+  align-items: center; /* vertically center inside button */
+  gap: 8px;
 }
 
+/* fix inside button icon size if needed */
 .btn-hero .icon {
-  margin-right: 10px;
   width: 24px;
   height: 24px;
-}
-
-.btn-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.2;
-}
-
-.btn-text strong {
-  font-size: 1rem;
-}
-
-.btn-text small {
-  font-size: 0.8rem;
-  color: #d0d0d0;
-}
-
-/* Responsive: stack vertically on narrow screens */
-@media (max-width: 600px) {
-  .contact-line {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .contact-text, .btn-hero {
-    min-width: 100%;
-  }
-
-  .btn-hero {
-    justify-content: center;
-    margin-top: 15px;
-  }
 }
 
 
@@ -1015,13 +979,6 @@ footer {
 
 /* ================= Responsive ================= */        
 @media (max-width: 900px) {
-  .contact-line {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .contact-text {
-    width: 100%;
-  }
   .build-section {
     flex-direction: column;
     height: auto;
@@ -1244,7 +1201,7 @@ footer {
 
   <div class="hero-content">
     <h1>Crafting Quality Sheet Metal Solutions Since 1916</h1>
-    <p>At Hathaway Ferguson, we understand what matters most to our clients: a reliable, trusted, and experienced partner for all their ductwork fabrication and manufacturing needs.</p>
+    <p>At Hathaway Ferguson, we understand what matters most to our clients: a reliable, trusted, and experienced partner for all their ductwork fabrication and manufacturing needs.</p> <br>
     <a href="contact.html" class="button-white-text">Get A Qoute</a> 
   </div>
 </section>
