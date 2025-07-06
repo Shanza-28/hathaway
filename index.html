@@ -468,7 +468,7 @@ a.btn-hero {
   align-items: center; /* vertically center all */
   gap: 20px;
   padding: 20px;
-  flex-wrap: nowrap;  /* prevent wrapping */
+  flex-wrap: nowrap;  /* prevent wrapping on large screens */
 }
 
 .contact-line .icon {
@@ -487,7 +487,7 @@ a.btn-hero {
 
 .icon-large { width:48px; height:48px; }
 .icon-small { width:30px; height:30px; }
-        
+
 .btn-hero {
   flex-shrink: 0; /* keep button size */
   display: flex;
@@ -501,6 +501,38 @@ a.btn-hero {
   height: 24px;
 }
 
+/* New: color emojis blue inside contact text */
+.contact-text span.emoji,
+#contact p span.emoji {
+  color: #007bff; /* Blue color */
+  font-size: 1.2em; /* slightly bigger for clarity */
+  margin-right: 6px;
+  user-select: none; /* optional: prevent emoji selection */
+}
+
+/* Responsive improvements */
+@media (max-width: 700px) {
+  .contact-line {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .contact-text {
+    flex: 100%;
+    justify-content: flex-start; /* left align text */
+    margin-bottom: 10px;
+  }
+
+  .btn-hero {
+    flex: 100%;
+    justify-content: center;
+  }
+}
+
+
+
+
+        
 
 .phone-info {
   display: flex;
