@@ -791,18 +791,8 @@ footer {
   flex: 1;
   min-width: 250px;
 }
-@media (max-width: 600px) {
-  .product-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
 
-  .product-header h2 {
-    font-size: 1.5rem;
-    min-width: 100%;
-  }
-}
+
 .more-btn {
   padding: 10px 20px;
   background-color: #0077cc;
@@ -821,6 +811,22 @@ footer {
   color: #fff !important;
 }
 
+        @media (max-width: 600px) {
+  .product-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .product-header h2 {
+    font-size: 1.5rem;
+    min-width: 100%;
+  }
+       .more-btn {
+  margin-left: 4px;
+}
+
+        }        
 .product-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
