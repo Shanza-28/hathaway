@@ -657,13 +657,18 @@ footer {
 }
 
 .footer-bottom {
-  width: 100%;              /* full width */
-  background: #0D3B66;      /* dark blue background */
+  position: fixed;    /* Fix the footer */
+  bottom: 0;          /* Stick to bottom */
+  left: 0;            /* Align left edge */
+  width: 100%;        /* Full width */
+  background: #0D3B66;
   color: white;
   text-align: center;
   padding: 18px 20px;
   font-size: 0.95rem;
+  z-index: 1000;      /* Stay on top */
 }
+
 
 
 /* ============== FAQ Section ============== */
