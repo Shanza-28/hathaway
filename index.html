@@ -33,9 +33,7 @@ body {
   margin: 0;
   padding: 0;
 }
-main {
-  flex: 1;
-}
+
 /* ================== Header ================== */
 header {
   position: fixed;
@@ -589,6 +587,7 @@ footer {
   border-bottom: 1px solid #ccc;
   padding: 50px 20px 30px;
 }
+
 .footer-container {
   max-width: 1200px;
   margin: auto;
@@ -625,11 +624,14 @@ footer {
 .footer-section ul li a {
   color: #333;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  border-bottom: 1px dashed transparent;
+  padding-bottom: 2px;
 }
 
 .footer-section ul li a:hover {
   color: #0D3B66;
+  border-bottom: 1px dashed #0D3B66;
 }
 
 .footer-section p,
@@ -659,12 +661,35 @@ footer {
 }
 
 .footer-bottom {
-  width: 100%;
   background: #0D3B66;
   color: white;
   text-align: center;
   padding: 18px 20px;
   font-size: 0.95rem;
+}
+.footer-links {
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: center;    /* center horizontally */
+  gap: 1rem;              /* space between buttons */
+  padding: 1rem 0;
+}
+
+.footer-links a {
+  text-decoration: none;
+  padding: 0.5rem 1.2rem;
+  border: 2px solid #444;
+  border-radius: 6px;
+  color: #444;
+  font-weight: 600;
+  width: 150px;           /* fixed width for uniform button size */
+  text-align: center;     /* center text inside buttons */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.footer-links a:hover {
+  background-color: #444;
+  color: white;
 }
 
 
@@ -1226,7 +1251,7 @@ footer {
 
 </head>
 <body>
-<main>
+
 <header>
   <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqXc4r4wRuxSe_zEwsCB9NUVncHv4ojRYXXA&s" alt="Hathaway Ferguson Logo" />
 
@@ -1515,7 +1540,6 @@ footer {
   }
 </script>
 
-</main>
   
 <footer>
   <div class="footer-top">
@@ -1554,21 +1578,22 @@ footer {
       </div>
 
       <!-- Contact Info -->
-<div class="footer-section">
-  <h3>Get in Touch</h3>
-  <p><span style="color: #007bff;">📞</span> <a href="tel:+16142533414">614-253-3414</a></p>
-  <p><span style="color: #007bff;">✉️</span> <a href="mailto:info@hathawayferguson.com">info@hathawayferguson.com</a></p>
- <p><span style="color: #007bff;">📍</span> 873 Mt. Vernon Ave, Columbus, OH 43203</p>
-<br> <br>
-</div>
+      <div class="footer-links">
+        <h3>Get in Touch</h3>
+        <p>📞 <a href="tel:+16142533414">614-253-3414</a></p>
+        <p> ✉️ <a href="mailto:info@hathawayferguson.com">info@hathawayferguson.com</a></p>
+        <p>📍 873 Mt. Vernon Ave, Columbus, OH 43203</p>
+      </div>
 
     </div>
+  </div>
 
-  <div class="footer-bottom">  <br>
+  <div class="footer-bottom">
     <p>© 2025 Hathaway Ferguson. All rights reserved.</p>
   </div>
 </footer>
 
+  
 <script>
   const hero = document.querySelector('.hero');
   const images = [
