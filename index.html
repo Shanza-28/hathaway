@@ -910,101 +910,98 @@ footer {
 
 .build-left {
   flex: 1;
-  background-color: #0d3b66; /* dark blue */
-  color: #f0f8ff;            /* light bluish-white text for better contrast */
+  background-color: #0d3b66;
+  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 60px 40px;
-  box-sizing: border-box;
+  padding: 40px;
+  text-align: center;
 }
 
 .build-left-content {
   max-width: 480px;
-  text-align: center;
+  width: 100%;
 }
 
 .build-left-content h2 {
   font-size: 3rem;
-  margin-bottom: 1rem;
-  line-height: 1.2;
   font-weight: 700;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .build-left-content p {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
   line-height: 1.6;
-  color: #cce6ff; /* softer blue tint for paragraph */
+  margin-bottom: 30px;
+  color: #cbd6e2;
 }
 
-.build-left-content but {
-  color: #66ccff;
-  text-decoration: underline;
-  font-weight: 600;
-  transition: color 0.3s ease;
-}
-
-.build-left-content but:hover {
-  color: #a3d8ff;
-  text-decoration: none;
-}
-
-/* Right section remains mostly the same */
-
-.build-right {
-  flex: 1;
-  position: relative;
-  background: url('https://www.petrosync.com/blog/wp-content/uploads/2023/10/pressure-pipings-are-important-components-in-oil-and-gas-petrochemical-and-energy-industry-jpg.png') center center / cover no-repeat fixed;
+.build-links {
+  margin-bottom: 30px;
   display: flex;
-  align-items: flex-end;
   justify-content: center;
-  padding: 40px;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
-/* Contact form styling unchanged */
-
-.build-contact-form {
-  background: rgba(255,255,255,0.95);
-  padding: 30px;
-  border-radius: 20px;
-  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
-  width: 100%;
-  max-width: 500px;
-  animation: fadeInUp 0.8s ease-out both;
-  z-index: 2;
-  font-family: 'Lora', serif;
-}
-
-.build-contact-form input,
-.build-contact-form textarea {
-  width: 100%;
-  padding: 12px 15px;
-  margin: 12px 0;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  font-size: 1rem;
-}
-
-.build-left-btn {
-  display: inline-block;
-  padding: 12px 30px;
-  background-color: #fff;      /* white button background */
-  color: #0d3b66;             /* dark blue text */
-  font-family: 'Playfair Display', serif;  /* elegant serif font */
-  font-size: 1.25rem;
+.build-links a {
+  color: #a8c0ff;
   font-weight: 600;
-  border-radius: 12px;
   text-decoration: none;
-  box-shadow: 0 4px 8px rgba(13, 59, 102, 0.3);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1.1rem;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.build-links a:hover,
+.build-links a:focus {
+  color: #fff;
+  border-bottom-color: #ffffff;
+}
+
+.btn-elegant {
+  display: inline-block;
+  padding: 14px 38px;
+  background: transparent;
+  border: 2.5px solid #ffffff;
+  color: #ffffff;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  border-radius: 30px;
+  text-decoration: none;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+  transition: all 0.4s ease;
   cursor: pointer;
 }
 
-.build-left-btn:hover {
-  background-color: #0d3b66;
-  color: #fff;
+.btn-elegant:hover {
+  background: #ffffff;
+  color: #0d3b66;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .build-section {
+    flex-direction: column;
+    height: auto;
+  }
+  .build-left {
+    padding: 30px 20px;
+  }
+  .build-left-content h2 {
+    font-size: 2.4rem;
+  }
+  .build-links {
+    gap: 20px;
+  }
 }
 
 /* Footer links */
