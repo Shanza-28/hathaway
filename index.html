@@ -33,7 +33,9 @@ body {
   margin: 0;
   padding: 0;
 }
-
+main {
+  flex: 1;
+}
 /* ================== Header ================== */
 header {
   position: fixed;
@@ -657,16 +659,12 @@ footer {
 }
 
 .footer-bottom {
-  position: fixed;    /* Fix the footer */
-  bottom: 0;          /* Stick to bottom */
-  left: 0;            /* Align left edge */
-  width: 100%;        /* Full width */
+  width: 100%;
   background: #0D3B66;
   color: white;
   text-align: center;
   padding: 18px 20px;
   font-size: 0.95rem;
-  z-index: 1000;      /* Stay on top */
 }
 
 
@@ -1228,7 +1226,7 @@ footer {
 
 </head>
 <body>
-
+<main>
 <header>
   <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqXc4r4wRuxSe_zEwsCB9NUVncHv4ojRYXXA&s" alt="Hathaway Ferguson Logo" />
 
@@ -1517,7 +1515,8 @@ footer {
   }
 </script>
 
-
+</main>
+  
 <footer>
   <div class="footer-top">
     <div class="footer-container">
