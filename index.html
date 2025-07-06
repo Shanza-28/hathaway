@@ -662,7 +662,14 @@ footer {
   text-align: center;
   padding: 18px 20px;
   font-size: 0.95rem;
+
+  position: fixed;    /* Fixes the footer at the bottom */
+  bottom: 0;
+  left: 0;
+  width: 100%;        /* Full width */
+  z-index: 1000;      /* Make sure it's on top */
 }
+
 
 /* ============== FAQ Section ============== */
 .faq-section {
