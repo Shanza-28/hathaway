@@ -460,20 +460,24 @@ a.btn-hero {
 .contact-line {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 30px;
-  flex-wrap: wrap;
+  gap: 20px; /* spacing between items */
+  padding: 20px;
+  background-color: #f9f9f9; /* optional styling */
 }
 
+.contact-line .icon {
+  width: 40px;
+  height: 40px;
+}
+
+.contact-text {
+  flex: 1; /* take up available space */
+  font-size: 16px;
+  line-height: 1.5;
+}
 .icon-large { width:48px; height:48px; }
 .icon-small { width:30px; height:30px; }
 
-.contact-text {
-  flex: 1;
-  font-size: 20px;
-  color: #333;
-  line-height: 1.8;
-}
 
 .phone-info {
   display: flex;
@@ -1215,7 +1219,7 @@ footer {
       <p><strong>Visit us:</strong> 873 Mt. Vernon Avenue, Columbus, Ohio</p>
       <p><strong>Call:</strong> 614-253-3414 &nbsp; | &nbsp; <strong>Text:</strong> 614-738-0065</p>
       <p><strong>Email:</strong> <a href="mailto:info@hathawayferguson.com">info@hathawayferguson.com</a></p>
- <a href="#About" class="btn-hero">Learn More</a>
+ <a href="#About" class="learn-more">Learn More</a>
     </div>
   </div>
 </section>
@@ -1325,14 +1329,17 @@ footer {
 <section id="contact">
   <div class="contact-line">
     <img src="phone-icon.svg" alt="Phone icon" class="icon" />
+    
     <span class="contact-text">
       We are one of the highest-rated companies in the United States. For any assistance, please contact our 24/7 hotline. We are always here to help.
     </span>
 
     <a href="tel:6142533414" class="btn-hero">
       <img src="questionmark-icon.svg" alt="Help icon" class="icon" />
-      614-253-3414 <br>
-      Have any questions?
+      <div class="btn-text">
+        <strong>614-253-3414</strong>
+        <small>Have any questions?</small>
+      </div>
     </a>
   </div>
 </section>
