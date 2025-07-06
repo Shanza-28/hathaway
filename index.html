@@ -905,39 +905,53 @@ footer {
   height: 100vh;
   margin: 0; padding: 0;
   overflow: hidden;
+  font-family: 'Playfair Display', serif;
 }
 
 .build-left {
   flex: 1;
-  background-color: #0d3b66;
+  background-color: #0d3b66; /* dark blue */
+  color: #f0f8ff;            /* light bluish-white text for better contrast */
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px;
-  font-family: 'Playfair Display', serif;
-  color: white;
+  padding: 60px 40px;
+  box-sizing: border-box;
 }
 
 .build-left-content {
-  max-width: 500px;
+  max-width: 480px;
   text-align: center;
 }
 
 .build-left-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
 }
 
 .build-left-content p {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
   line-height: 1.6;
+  color: #cce6ff; /* softer blue tint for paragraph */
 }
 
 .build-left-content a {
-  color: #00aaff;
+  color: #66ccff;
   text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
+
+.build-left-content a:hover {
+  color: #a3d8ff;
+  text-decoration: none;
+}
+
+/* Right section remains mostly the same */
 
 .build-right {
   flex: 1;
@@ -949,6 +963,8 @@ footer {
   padding: 40px;
 }
 
+/* Contact form styling unchanged */
+
 .build-contact-form {
   background: rgba(255,255,255,0.95);
   padding: 30px;
@@ -958,6 +974,7 @@ footer {
   max-width: 500px;
   animation: fadeInUp 0.8s ease-out both;
   z-index: 2;
+  font-family: 'Lora', serif;
 }
 
 .build-contact-form input,
@@ -968,7 +985,6 @@ footer {
   border: 1px solid #ccc;
   border-radius: 10px;
   font-size: 1rem;
-  font-family: 'Lora', serif;
 }
 
 .build-contact-form button {
@@ -988,31 +1004,17 @@ footer {
 .build-contact-form button:hover {
   background: #09406a;
 }
-  .footer-section a {
-    color: #0D3B66;
-    text-decoration: none;
-  }
 
-  .footer-section a:hover {
-    text-decoration: underline;
-  }.build-contact-form button {
-  background: #0d3b66;
-  color: white;
-  border: none;
-  padding: 14px 25px;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 1.1rem;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  width: 100%;
-  margin-top: 10px;
+/* Footer links */
+
+.footer-section a {
+  color: #0D3B66;
+  text-decoration: none;
 }
 
-.build-contact-form button:hover {
-  background: #09406a;
+.footer-section a:hover {
+  text-decoration: underline;
 }
-
 
 
 /* ================= Animations ================= */
