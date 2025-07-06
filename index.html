@@ -987,6 +987,7 @@ footer {
   font-size: 1rem;
 }
 
+
 .build-contact-form button {
   background: #0d3b66;
   color: white;
@@ -999,6 +1000,8 @@ footer {
   transition: background 0.3s ease;
   width: 100%;
   margin-top: 10px;
+  display: block; /* force display */
+  z-index: 11; /* above form background */
 }
 
 .build-contact-form button:hover {
