@@ -900,110 +900,120 @@ footer {
 }
 
 /* ============== Build Section ============== */
-.build-section {
+  .build-section {
   display: flex;
   height: 100vh;
   margin: 0; padding: 0;
   overflow: hidden;
-  font-family: 'Playfair Display', serif;
 }
 
 .build-left {
   flex: 1;
   background-color: #0d3b66;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 40px;
-  text-align: center;
+  font-family: 'Playfair Display', serif;
+  color: white;
 }
 
 .build-left-content {
-  max-width: 480px;
-  width: 100%;
+  max-width: 500px;
+  text-align: center;
 }
 
 .build-left-content h2 {
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 2.5rem;
   margin-bottom: 20px;
-  letter-spacing: 2px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .build-left-content p {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  margin-bottom: 30px;
-  color: #cbd6e2;
-}
-
-.build-links {
-  margin-bottom: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.build-links a {
-  color: #a8c0ff;
-  font-weight: 600;
-  text-decoration: none;
   font-size: 1.1rem;
-  padding-bottom: 3px;
-  border-bottom: 2px solid transparent;
-  transition: border-color 0.3s ease, color 0.3s ease;
+  margin-bottom: 30px;
+  line-height: 1.6;
 }
 
-.build-links a:hover,
-.build-links a:focus {
-  color: #fff;
-  border-bottom-color: #ffffff;
+.build-left-content a {
+  color: #00aaff;
+  text-decoration: underline;
 }
 
-.btn-elegant {
-  display: inline-block;
-  padding: 14px 38px;
-  background: transparent;
-  border: 2.5px solid #ffffff;
-  color: #ffffff;
-  font-family: 'Playfair Display', serif;
-  font-size: 1.3rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  border-radius: 30px;
-  text-decoration: none;
-  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
-  transition: all 0.4s ease;
+.build-right {
+  flex: 1;
+  position: relative;
+  background: url('https://www.petrosync.com/blog/wp-content/uploads/2023/10/pressure-pipings-are-important-components-in-oil-and-gas-petrochemical-and-energy-industry-jpg.png') center center / cover no-repeat fixed;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 40px;
+}
+
+.build-contact-form {
+  background: rgba(255,255,255,0.95);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 500px;
+  animation: fadeInUp 0.8s ease-out both;
+  z-index: 2;
+}
+
+.build-contact-form input,
+.build-contact-form textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Lora', serif;
+}
+
+.build-contact-form button {
+  background: #0d3b66;
+  color: white;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
   cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
 }
 
-.btn-elegant:hover {
-  background: #ffffff;
-  color: #0d3b66;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.7);
-  transform: scale(1.05);
+.build-contact-form button:hover {
+  background: #09406a;
+}
+  .footer-section a {
+    color: #0D3B66;
+    text-decoration: none;
+  }
+
+  .footer-section a:hover {
+    text-decoration: underline;
+  }.build-contact-form button {
+  background: #0d3b66;
+  color: white;
+  border: none;
+  padding: 14px 25px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .build-section {
-    flex-direction: column;
-    height: auto;
-  }
-  .build-left {
-    padding: 30px 20px;
-  }
-  .build-left-content h2 {
-    font-size: 2.4rem;
-  }
-  .build-links {
-    gap: 20px;
-  }
+.build-contact-form button:hover {
+  background: #09406a;
 }
 
+        
 /* Footer links */
 
 .footer-section a {
